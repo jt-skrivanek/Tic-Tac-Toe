@@ -32,6 +32,7 @@ class TicTacToe():
             if self.turn:
                 # self.x_player.make_move()
                 move = self.x_player.make_move()
+                # checks to see if y player already has 0 here
                 if self.board[move] == self.y_player.symbol:
                     print("0 already has a place here!")
                 else:
@@ -41,6 +42,7 @@ class TicTacToe():
             else:
                 # self.y_player.make_move()
                 move = self.y_player.make_move()
+                # checks to see if x player already has X here
                 if self.board[move] == self.x_player.symbol:
                     print("X already has a place here!")
                 else:
