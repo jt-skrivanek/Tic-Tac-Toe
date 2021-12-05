@@ -84,7 +84,16 @@ class TicTacToe():
     def check_tie(self):
         if not ("1" in self.board or "2" in self.board or "3" in self.board or "4" in self.board or "5" in self.board or "6" in self.board or "7" in self.board or "8" in self.board or "9" in self.board):
             print("TIE")
-            return False
+            return True
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(' ')
+
+    def available_moves(self):
+        return [i for i, x in enumerate(self.board) if x==" "]
 
 def play(game_instance):
     tictac = game_instance
