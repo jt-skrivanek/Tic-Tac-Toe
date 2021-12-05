@@ -95,7 +95,15 @@ def play(game_instance):
         end = tictac.check_win() or tictac.check_tie()
         if end:
             tictac.draw_board()
-            play = False
+            # play = False
+            play_again = input("Play again? [y/n]").lower()
+
+            if play_again == "y":
+                tictac.board = tictac.og_board
+                
+            else:
+                print("game ending....")
+                play = False
     print("game ended mfs")
 
 if __name__== "__main__":
