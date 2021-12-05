@@ -94,8 +94,20 @@ def play(game_instance):
         tictac.insert()
         end = tictac.check_win() or tictac.check_tie()
         if end:
-            tictac.draw_board()
-            play = False
+            print("Play again? [y/n]")
+            again = input()
+            # checks to see if y or n is inserted and stops the program or resets board based on outcome
+            if again == "n":
+                tictac.draw_board()
+                play = False
+            if again == "y":
+                tictac.board =[
+                "1","2","3",
+                "4","5","6",
+                "7","8","9"
+                    ]           
+                tictac.insert
+                play = True
     print("game ended mfs")
 
 if __name__== "__main__":
