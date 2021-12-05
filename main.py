@@ -34,7 +34,7 @@ class TicTacToe():
                 move = self.x_player.make_move()
                 # checks to see if y player already has 0 here
                 if self.board[move] == self.y_player.symbol:
-                    print("0 already has a place here!")
+                    print("INVALID PLACE- O already has a place here!")
                 else:
                     self.board[move] = self.x_player.symbol
                     self.turn = 0
@@ -44,12 +44,12 @@ class TicTacToe():
                 move = self.y_player.make_move()
                 # checks to see if x player already has X here
                 if self.board[move] == self.x_player.symbol:
-                    print("X already has a place here!")
+                    print("INVALID PLACE-X already has a place here!")
                 else:
                     self.board[move] = self.y_player.symbol
                     self.turn = 1
                     self.moves.append(move)
-        except ValueError:
+        except IndexError or ValueError:
             print("invalid value try again")
             pass # as the turn is still the same there is no need for anything else 
 
@@ -100,7 +100,7 @@ def play(game_instance):
 
             if play_again == "y":
                 tictac.board = tictac.og_board
-                
+
             else:
                 print("game ending....")
                 play = False
