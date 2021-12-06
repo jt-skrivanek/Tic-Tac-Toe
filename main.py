@@ -34,7 +34,7 @@ class TicTacToe():
                 move = self.x_player.make_move()
                 # checks to see if y player already has 0 here
                 if self.board[move] == self.y_player.symbol:
-                    print("0 already has a place here!")
+                    print("INVALID PLACE- O already has a place here!")
                 else:
                     self.board[move] = self.x_player.symbol
                     self.turn = 0
@@ -44,12 +44,12 @@ class TicTacToe():
                 move = self.y_player.make_move()
                 # checks to see if x player already has X here
                 if self.board[move] == self.x_player.symbol:
-                    print("X already has a place here!")
+                    print("INVALID PLACE-X already has a place here!")
                 else:
                     self.board[move] = self.y_player.symbol
                     self.turn = 1
                     self.moves.append(move)
-        except ValueError:
+        except IndexError or ValueError:
             print("invalid value try again")
             pass # as the turn is still the same there is no need for anything else 
 
@@ -84,7 +84,16 @@ class TicTacToe():
     def check_tie(self):
         if not ("1" in self.board or "2" in self.board or "3" in self.board or "4" in self.board or "5" in self.board or "6" in self.board or "7" in self.board or "8" in self.board or "9" in self.board):
             print("TIE")
-            return False
+            return True
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(' ')
+
+    def available_moves(self):
+        return [i for i, x in enumerate(self.board) if x==" "]
 
 def play(game_instance):
     tictac = game_instance
@@ -95,7 +104,15 @@ def play(game_instance):
         end = tictac.check_win() or tictac.check_tie()
         if end:
             tictac.draw_board()
-            play = False
+            # play = False
+            play_again = input("Play again? [y/n]").lower()
+
+            if play_again == "y":
+                tictac.board = tictac.og_board
+
+            else:
+                print("game ending....")
+                play = False
     print("game ended mfs")
 
 if __name__== "__main__":

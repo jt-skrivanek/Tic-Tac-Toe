@@ -4,5 +4,5 @@ class HumanPlayer():
         self.symbol = symbol
 
     def make_move(self):
-        move = int(input(f"choose a position {self.symbol} player")) - 1
+        move = int(input(f"choose a position {self.symbol} player: ")) - 1
         return move
