@@ -1,6 +1,6 @@
 """ made this separate file called checkers made from static functions
 ,things i like and things i dont wanna touch
-"""
+ """
 
 
 def draw_board(board):
@@ -60,6 +60,3 @@ def num_empty_squares(board):
 def available_moves(board):
     return [i for i, x in enumerate(board) if x==" "]
 
-def play(x_player, y_player):
-    global turn
-    global board
