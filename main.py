@@ -10,8 +10,8 @@ board = [
 turn = "x"
 moves = [] # keeps track of moves made
 
-x_player = HumanPlayer("x")
-y_player = HumanPlayer("y")
+x_player = HumanPlayer("O")
+y_player = HumanPlayer("X")
 
 def insert(board):
     global turn

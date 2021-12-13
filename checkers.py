@@ -14,10 +14,10 @@ def draw_board(board):
 
 def check_win(board, turn):
     if check_row(board) or check_columns(board) or check_diagonal(board):
-        if turn==1:
-            print("the winner is o")
+        if turn=="x":
+            print("the winner is X")
         else:
-            print("the winner is x")
+            print("the winner is O")
         return True
     
   
