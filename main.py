@@ -1,5 +1,5 @@
 import checkers
-from player import HumanPlayer, AiPlayer
+from player import HumanPlayer 
 
 og_board = ["1","2","3","4","5","6","7","8","9"]
 board = [
@@ -61,7 +61,7 @@ def play(x_player, y_player):
             else:
                 print("game ending....")
                 play = False
-    print("game ended mfs")
+    print("Game Over!")
 
 if __name__== "__main__":
 
