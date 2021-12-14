@@ -1,6 +1,6 @@
 import checkers
 from player import HumanPlayer, AiPlayer
-"""------------------------------º---------------------------º--------------------------------------"""
+
 og_board = ["1","2","3","4","5","6","7","8","9"]
 board = [
         "1","2","3",
@@ -41,8 +41,6 @@ def insert(board):
         print("invalid value try again")
         pass # as the turn is still the same there is no need for anything else 
 
-
-
 def play(x_player, y_player):
     global turn
     global board
@@ -66,6 +64,5 @@ def play(x_player, y_player):
     print("game ended mfs")
 
 if __name__== "__main__":
-
 
     play(x_player, y_player)

@@ -1,8 +1,4 @@
-""" made this separate file called checkers made from static functions
-,things i like and things i dont wanna touch
- """
-
-
+# check functions
 def draw_board(board):
     print()
     print("   ",board[0],"|", board[1],"|", board[2])
